@@ -1,4 +1,4 @@
-package com.limadougg.motivation.infrastructure
+package com.limadougg.motivation.infra
 
 import android.content.Context
 import android.content.SharedPreferences

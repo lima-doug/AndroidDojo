@@ -1,12 +1,13 @@
-package com.limadougg.motivation
+package com.limadougg.motivation.ui
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.limadougg.motivation.infra.MotivationCostants
+import com.limadougg.motivation.R
+import com.limadougg.motivation.infra.SecurityPreferences
 import com.limadougg.motivation.databinding.ActivityUserBinding
 
 class UserActivity : AppCompatActivity(), View.OnClickListener {
@@ -22,6 +23,8 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
         binding.buttonSave.setOnClickListener(this)
 
         supportActionBar?.hide()
+
+        verifyUserName()
     }
 
     override fun onClick(v: View) {
@@ -34,12 +37,22 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
     private fun handleSave() {
         val name = binding.editName.text.toString()
         if (name != "") {
-            startActivity(Intent(this, MainActivity::class.java))
             SecurityPreferences(this).storeString(MotivationCostants.KEY.USER_NAME, name)
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
             Toast.makeText(this, R.string.validation_mandatory_name, Toast.LENGTH_SHORT).show()
         }
     }
 
+
+    private fun verifyUserName() {
+        val name = SecurityPreferences(this).getString(MotivationCostants.KEY.USER_NAME)
+
+        if (name != "") {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+    }
 }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:paddingBottom="12dp"
+        android:background="@color/blue_menu"
+
+        >
+
+        <ImageView
+            android:id="@+id/image_all"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_all_inclusive"
+            />
+
+        <ImageView
+            android:id="@+id/image_happy"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_emoji_emotions"
+            />
+
+
+        <ImageView
+            android:id="@+id/image_sunny"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_sunny"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/text_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_user"
+        android:layout_below="@id/linear_menu"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        />
+
+
+    <TextView
+        android:id="@+id/text_motivation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/motivation_phrase"
+        android:textSize="22sp" />
+
+    <View
+        android:layout_width="128dp"
+        android:layout_height="4dp"
+        android:layout_below="@+id/text_motivation"
+        android:layout_centerInParent="true"
+        android:background="@color/blue_menu"
+        android:elevation="4dp"
+        />
+
+    <Button
+        android:id="@+id/button_new_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/blue_menu"
+        android:fontFamily="@font/cabin"
+        android:paddingHorizontal="32dp"
+        android:text="@string/add_phrase" />
+
+
+
+</RelativeLayout>
