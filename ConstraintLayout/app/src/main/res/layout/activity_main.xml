@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cappuccino"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_header"
+        app:layout_constraintEnd_toEndOf="@id/view_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_header" />
+
+    <ImageView
+        android:id="@+id/image_watch"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_watch"
+        app:layout_constraintEnd_toStartOf="@id/image_favorite"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_header"
+        app:tint="@color/primary_color" />
+
+    <TextView
+        android:id="@+id/text_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minutes"
+        app:layout_constraintEnd_toEndOf="@id/image_watch"
+        app:layout_constraintStart_toStartOf="@id/image_watch"
+        app:layout_constraintTop_toBottomOf="@id/image_watch" />
+
+    <ImageView
+        android:id="@+id/image_favorite"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_favorite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_watch"
+        app:layout_constraintTop_toTopOf="@id/image_watch"
+        app:tint="@color/primary_color" />
+
+    <TextView
+        android:id="@+id/text_fav_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fav_number"
+        app:layout_constraintEnd_toEndOf="@id/image_favorite"
+        app:layout_constraintStart_toStartOf="@id/image_favorite"
+        app:layout_constraintTop_toBottomOf="@id/image_favorite" />
+
+    <View
+        android:id="@+id/view_separator"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_minutes" />
+
+    <TextView
+        android:id="@+id/recipe_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/recipe_description"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_separator" />
+
+    <TextView
+        android:id="@+id/text_ingredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/ingredients"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipe_description" />
+
+
+    <ImageView
+        android:id="@+id/image_ingredient1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_ingredients"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:tint="@color/text_color_primary" />
+
+    <TextView
+        android:id="@+id/text_ingredients_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dose_express"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_ingredient1"
+        app:layout_constraintStart_toEndOf="@id/image_ingredient1"
+        app:layout_constraintTop_toTopOf="@id/image_ingredient1" />
+
+    <ImageView
+        android:id="@+id/image_ingredient2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_ingredient1"
+        app:tint="@color/text_color_primary" />
+
+    <TextView
+        android:id="@+id/text_ingredients_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/milk"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_ingredient2"
+        app:layout_constraintStart_toEndOf="@id/image_ingredient2"
+        app:layout_constraintTop_toTopOf="@id/image_ingredient2" />
+
+    <ImageView
+        android:id="@+id/image_ingredient3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_ingredient2"
+        app:tint="@color/text_color_primary" />
+
+    <TextView
+        android:id="@+id/text_ingredients_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chocolate"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_ingredient3"
+        app:layout_constraintStart_toEndOf="@id/image_ingredient3"
+        app:layout_constraintTop_toTopOf="@id/image_ingredient3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

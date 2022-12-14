@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ConstraintLayout</string>
+    <string name="password">Senha</string>
+    <string name="email">Email</string>
+    <string name="cta_sign_up">Ainda não é cadastrado? Cadastre-se!</string>
+    <string name="minutes">15 minutos</string>
+    <string name="fav_number">54214</string>
+    <string name="recipe_description">Uma simples e perfeitamente extraída dose de espresso misturado com leite fresco e chocolate fazem esta bebida deliciosa.</string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="dose_express">1 dose espresso</string>
+    <string name="milk">100ml leite</string>
+    <string name="chocolate">1 colher de chocolate em pó</string>
+</resources>
