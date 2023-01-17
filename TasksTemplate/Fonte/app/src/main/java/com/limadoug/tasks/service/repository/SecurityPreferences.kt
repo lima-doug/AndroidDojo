@@ -1,4 +1,4 @@
-package com.devmasterteam.tasks.service.repository
+package com.limadoug.tasks.service.repository
 
 import android.content.Context
 import android.content.SharedPreferences

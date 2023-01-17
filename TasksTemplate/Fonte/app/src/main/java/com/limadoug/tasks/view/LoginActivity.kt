@@ -1,11 +1,16 @@
 package com.devmasterteam.tasks.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.ActivityLoginBinding
 import com.devmasterteam.tasks.viewmodel.LoginViewModel
+import com.limadoug.tasks.service.model.PersonModel
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -26,13 +31,42 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         binding.buttonLogin.setOnClickListener(this)
         binding.textRegister.setOnClickListener(this)
 
+        viewModel.verifyLoggedUser()
+
         // Observadores
         observe()
     }
 
     override fun onClick(v: View) {
+        if (v.id == R.id.button_login) {
+            handleLogin()
+        } else if(v.id == R.id.text){
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 
     private fun observe() {
+        viewModel.login.observe(this) {
+            if (it.status()) {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(applicationContext, it.message(), Toast.LENGTH_SHORT).show()
+            }
+        }
+        viewModel.loggedUser.observe(this) {
+            if (it) {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+                finish()
+            }
+        }
     }
+
+
+    private fun handleLogin() {
+        val email: String = binding.editEmail.text.toString()
+        val password: String = binding.editPassword.text.toString()
+        viewModel.doLogin(email, password)
+    }
+
 }
